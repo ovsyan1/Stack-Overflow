@@ -1,0 +1,7 @@
+.app-wrapper{
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1200px;
+}
