@@ -1,0 +1,11 @@
+.profile_wrapper{
+    margin: 5px;
+    display: flex;
+    padding: 5px;
+}
+.profile_wrapper img{
+    width: 150px;
+}
+.profile_wrapper div{
+    margin: 5px;
+}
