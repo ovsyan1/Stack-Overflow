@@ -1,0 +1,35 @@
+.users_wrapper{
+    display: grid;
+    margin: 10px;
+}
+.users_wrapper input{
+    width: 400px;
+    height: 20px;
+}
+.tag_wrapper{
+    display: grid;
+    grid-template-columns: repeat(5, 3fr);
+    justify-items: space-around;
+    margin-top: 10px;
+}
+.tag_wrapper div{
+    padding: 8px;
+    border: 1.5px solid rgb(168, 168, 168);
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+.tag_wrapper div:hover{
+    background-color: rgb(168, 168, 168);
+    color: white;
+}
+.users_box_wrapper{
+    display: flex;
+    margin-top: 5px;
+}
+.users_box_wrapper img{
+    width: 100px;
+}
+.users_box_wrapper div{
+    margin: 5px;
+}
