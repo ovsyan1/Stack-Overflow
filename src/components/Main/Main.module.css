@@ -1,0 +1,15 @@
+.tag_wrapper{
+    display: grid;
+    grid-template-columns: repeat(5, 3fr);
+    justify-items: space-around;
+}
+.tag_wrapper div{
+    padding: 8px;
+    border: 2.5px solid black;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+.tag_wrapper div:hover{
+    background-color: antiquewhite;
+  }
