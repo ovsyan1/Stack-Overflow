@@ -2,18 +2,6 @@ import React from 'react';
 import classes from './Tags.module.css';
 
 const Tags = (props) => {
-    const getTagsInfo = props.tagsInfo.map(tag => {
-        return (
-            <div className={classes.tag_wrapper}>
-                <div className={classes.tag_name}>{tag.tagName}</div>
-                <p className={classes.txt}>{tag.text}</p>
-                <div className={classes.statistic_wrapper}>
-                <div className={classes.total_number}>{tag.totalNumberQuestion} questions</div>
-                <div className={classes.total_number}>{tag.askedToday} asked today</div>
-                </div>
-            </div>
-        )
-    })
     return (
         <div className={classes.tags_page_wrapper}>
             <h2>Tags</h2>
@@ -28,7 +16,6 @@ const Tags = (props) => {
                 <div>New</div>
             </div>
             <div className={classes.tags_wrapper}>
-            {getTagsInfo}
             </div>
         </div>
     ) 

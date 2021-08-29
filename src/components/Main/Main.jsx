@@ -2,10 +2,6 @@ import React from 'react';
 import classes from './Main.module.css';
 
 const Main = (props) => {
-    console.log(props.owners)
-    const userName = props.owners.map(item => {
-        return <div key={item.key}>{item.name} - {item.reputation} - {item.date}</div>
-    })
     return (
         <div className={classes.main_wrapper}>
             <h2>Top Questions</h2>
@@ -17,9 +13,6 @@ const Main = (props) => {
                 <div>Month</div>
             </div>
             <hr></hr>
-            <div>
-            {userName}
-            </div>
         </div>
     )
 }

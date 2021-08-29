@@ -8,6 +8,7 @@ import Tags from './components/Tags/Tags';
 import Profile from './components/Profile/Profile';
 import Questions from './components/Questions/Questions';
 import Answer from './components/Answer/Answer';
+import UsersContainer from './components/Users/UsersContainer';
 
 function App(props) {
   return (
@@ -15,10 +16,10 @@ function App(props) {
       <Header />
       <Navbar />
       <div className='app-wrapper-content'>
-        <Route path='/main' render={() => <Main owners={props.store.owners}/>}/>
-        <Route path='/users' render={() => <Users owners={props.store.owners}/>}/>
-        <Route path='/tags' render={() => <Tags tagsInfo={props.store.tagsInfo}/>}/>
-        <Route path='/profile' render={() => <Profile store={props.store}/>}/>
+        <Route path='/main' render={() => <Main />}/>
+        <Route path='/users' render={() => <UsersContainer />}/>
+        <Route path='/tags' render={() => <Tags />}/>
+        <Route path='/profile' render={() => <Profile />}/>
         <Route path='/questions' render={() => <Questions />}/>
         <Route path='/answer' render={() => <Answer />}/>
       </div>

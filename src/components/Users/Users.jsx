@@ -2,19 +2,9 @@ import React from 'react';
 import classes from './Users.module.css';
 
 const Users = (props) => {
-    const infoAboutUsers = props.owners.map(u => {
-        return (
-        <div className={classes.users_box_wrapper}>
-            <img src={u.img} alt="avatar"/>
-            <div>
-            <div>{u.name}</div>
-            <div>{u.location}</div>
-            <div>{u.reputation}</div>
-            <div>{u.favoriteTags}</div>
-            </div>
-        </div>
-        
-        )
+
+    const getUsersFromAPI = props.users.map(u => {
+        return <div key={u.closed_beta_date}>{u.name}</div>
     })
 
     return (
@@ -28,7 +18,7 @@ const Users = (props) => {
                 <div>Editors</div>
                 <div>Moderators</div>
             </div>
-            {infoAboutUsers}
+            {getUsersFromAPI}
         </div>
     )
 }
