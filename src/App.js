@@ -17,8 +17,8 @@ function App(props) {
       <div className='app-wrapper-content'>
         <Route path='/main' render={() => <Main owners={props.store.owners}/>}/>
         <Route path='/users' render={() => <Users owners={props.store.owners}/>}/>
-        <Route path='/tags' render={() => <Tags />}/>
-        <Route path='/profile' render={() => <Profile />}/>
+        <Route path='/tags' render={() => <Tags tagsInfo={props.store.tagsInfo}/>}/>
+        <Route path='/profile' render={() => <Profile store={props.store}/>}/>
         <Route path='/questions' render={() => <Questions />}/>
         <Route path='/answer' render={() => <Answer />}/>
       </div>

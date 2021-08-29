@@ -1,3 +1,40 @@
+.tags_page_wrapper{
+    margin: 5px;
+}
+.tags_page_wrapper input{
+    width: 200px;
+    height: 30px;
+}
+.sort_btn_wrapper{
+    display: grid;
+    justify-content: end;
+}
+.sort_btn_wrapper div{
+    cursor: pointer;
+}
+.txt{
+    font-weight: 100;
+    font-size: small;
+}
+.tag_wrapper{
+    width: 275px;
+}
+.tag_name{
+    font-weight: 700;
+}
 .tags_wrapper{
     margin: 5px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.tags_wrapper div{
+    margin: 5px;
+}
+.total_number{
+    font-weight: 100;
+    font-size: smaller;
+    color: rgb(163, 150, 150);
+}
+.statistic_wrapper{
+    display: flex;
 }
