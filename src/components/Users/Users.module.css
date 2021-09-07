@@ -33,3 +33,18 @@
 .users_box_wrapper div{
     margin: 5px;
 }
+.selectedPage{
+    font-weight: 900;
+}
+.user_box{
+    display: flex;
+    flex-wrap: wrap;
+}
+.user_wrapper{
+    border: 1px solid black;
+    width: 250px;
+    margin: 5px;
+}
+.user_wrapper p{
+    margin: 5px;
+}
