@@ -33,11 +33,11 @@ const Users = (props) => {
             </div>
             <div className={classes.user_box}>
             {
-            props?.users?.map(u => (
+            props?.users?.map((u, i) => (
                 <NavLink to={'/profile/' + u.account_id}>
-                    <div className={classes.user_wrapper} key={u.account_id}>
+                    <div className={classes.user_wrapper} key={i}>
                         <div>
-                            <img src={u.profile_image} alt=""/>
+                            <img src={u.profile_image} alt={u.profile_image}/>
                         </div>
                         <p>{u.display_name}</p>
                         <p>Reputation:{u.reputation}</p>

@@ -1,18 +1,36 @@
 .main_wrapper{
     margin: 5px;
 }
-.tag_wrapper{
+.sort_wrapper{
     display: grid;
     grid-template-columns: repeat(5, 3fr);
     justify-items: space-around;
 }
-.tag_wrapper div{
+.sort_wrapper div{
     padding: 8px;
     border: 2.5px solid black;
     border-radius: 5px;
     margin: 5px;
     cursor: pointer;
 }
-.tag_wrapper div:hover{
+.sort_wrapper div:hover{
     background-color: antiquewhite;
+}
+.tag_wrapper{
+    cursor: pointer;
+    color: red;
+    margin: 5px;
+    border: 0.5px solid black;
+    border-radius: 5px;
+    padding: 5px;
+}
+.tag_wrapper:hover{
+    background-color:red;
+    color: burlywood;
+}
+.info_wrapper{
+    margin-top: 15px;
+}
+.info_wrapper span{
+    margin: 5px;
 }

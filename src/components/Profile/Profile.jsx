@@ -9,8 +9,10 @@ const Profile = (props) => {
     }
        return(
         <div className={classes.profile_wrapper}>
-            <img src='https://www.dallalii.com/img/admin/avatar5.png' alt="profile photo"/>
+            {/* <img src='https://www.dallalii.com/img/admin/avatar5.png' alt="profile photo"/> */}
+            <img src={props.profile.data.items[0].profile_image} alt="profile photo" />
             <h2>{props.profile.data.items[0].display_name}</h2>
+            <div>{props.profile.data.items[0].is_employee ? 'Have work' : 'Looking for work'}</div>
             <div>history of reputation</div>
             <div>posts</div>
             <div>questions</div>

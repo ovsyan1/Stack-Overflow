@@ -1,7 +1,7 @@
 import './App.css';
 import {Route} from 'react-router-dom';
 import Header  from './components/Header/Header';
-import Main from './components/Main/Main';
+import MainContainer from './components/Main/MainContainer';
 import Navbar from './components/Navbar/Navbar';
 import Tags from './components/Tags/Tags';
 import ProfileContainer from './components/Profile/ProfileContainer';
@@ -15,7 +15,7 @@ const App = () => {
       <Header />
       <Navbar />
       <div className='app-wrapper-content'>
-        <Route path='/main' render={() => <Main />}/>
+        <Route path='/main' render={() => <MainContainer />}/>
         <Route path='/profile/:userId?' render={() => <ProfileContainer />}/>
         <Route path='/users' render={() => <UsersContainer />}/>
         <Route path='/tags' render={() => <Tags />}/>
