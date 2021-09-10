@@ -1,14 +1,16 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import classes from './Main.module.css';
 
 const Main = (props) => {
+    
         return (
         <div className={classes.main_wrapper}>
             <h2>Top Questions</h2>
             <div className={classes.sort_wrapper}>
-                <div onClick={() => props.sortYoungerQuestions()}> New Questions</div>
-                <div onClick={() => props.sortOldQuestions()}>Old Questions</div>
-                <div>Hot</div>
+                <div onClick={() => props.sortYoungerQuestions()}>Newest</div>
+                <div onClick={() => props.sortOldQuestions()}>Oldest</div>
+                <div onClick={() => props.sortHotQuestions()}>Hot</div>
                 <div>Week</div>
                 <div>Month</div>
             </div>
@@ -17,16 +19,21 @@ const Main = (props) => {
             {props?.questions?.data?.items?.map((item, i) => {
                 return (
                 <div>
+                    <NavLink to={'/question/' + item.question_id}>
                     <h3 key={i + 2}>{item.title}</h3>
+                    </NavLink>
                     {item.tags.map((tag, i) => {
                         return (
-                            <span className={classes.tag_wrapper}>{tag}</span>
+                            <span className={classes.tag_wrapper} key={i}>{tag}</span>
                         )
                     })}
                     <div className={classes.info_wrapper}>
-                    <span>{item.owner.display_name}</span>
+                    <NavLink to={'/profile/' + item.owner.account_id}>
+                        <span>{item.owner.display_name}</span>
+                    </NavLink>
                     <span>reputation: {item.owner.reputation || 1}</span>
                     <span>{props.getDate(item.creation_date)}</span>
+                    <span>{item.view_count} views</span>
                     </div>
                 </div>
                 )

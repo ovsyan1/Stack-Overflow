@@ -3,11 +3,13 @@ import thunkMiddleware from 'redux-thunk';
 import profileReducer from './profile_reducer';
 import usersReducer from './users_reducer';
 import questionsReducer from './questions_reducer';
+import tagsReducer from './tags_reducer';
 
 let reducers = combineReducers({
     usersPage: usersReducer,
     profilePage: profileReducer,
-    mainPage: questionsReducer
+    mainPage: questionsReducer,
+    tagsPage: tagsReducer,
 });
 
 let store = createStore(reducers, applyMiddleware(thunkMiddleware));

@@ -3,6 +3,7 @@ import {questionsAPI} from '../api/api';
 const SET_QUESTIONS = 'SET_QUESTIONS';
 const YOUNG_SORT = 'YOUNG_SORT';
 const OLD_SORT = 'OLD_SORT';
+const HOT_SORT = 'HOT_SORT';
 
 const initialState = {
     questions: []
@@ -14,6 +15,10 @@ const questionsReducer = (state = initialState, action) => {
             return {...state, questions: action.questions};
         case YOUNG_SORT:
             return {...state, questions: action.questions};
+        case OLD_SORT:
+            return {...state, questions: action.questions};
+        case HOT_SORT: 
+            return {...state, questions: action.questions};
         default: return state;
     }
 }
@@ -21,6 +26,7 @@ const questionsReducer = (state = initialState, action) => {
 export const setQuestions = (questions) => ({type: SET_QUESTIONS, questions});
 export const setYoungQuestions = (questions) => ({type: YOUNG_SORT, questions});
 export const setOldQuestions = (questions) => ({type: OLD_SORT, questions});
+export const setHotQuestions = (questions) => ({type: HOT_SORT, questions});
 
 export const getAllQuestions = () => async (dispatch) => {
     let response = await questionsAPI.getAllQuestions();
@@ -32,8 +38,11 @@ export const sortYoungerQuestions = () => async (dispatch) => {
 }
 export const sortOldQuestions = () => async (dispatch) => {
     let response = await questionsAPI.sortOldQuestions();
-    dispatch(setYoungQuestions(response));
+    dispatch(setOldQuestions(response));
 }
-
+export const sortHotQuestions = () => async (dispatch) => {
+    let response = await questionsAPI.sortHotQuestions();
+    dispatch(setHotQuestions(response));
+}
 
 export default questionsReducer;

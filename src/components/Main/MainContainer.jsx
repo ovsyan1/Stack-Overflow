@@ -1,7 +1,7 @@
 import React from 'react';
 import Main from './Main';
 import {connect} from 'react-redux';
-import { getAllQuestions, sortYoungerQuestions, sortOldQuestions } from '../../redux/questions_reducer';
+import { getAllQuestions, sortYoungerQuestions, sortOldQuestions, sortHotQuestions } from '../../redux/questions_reducer';
 
 class MainContainer extends React.Component {
     componentDidMount() {
@@ -21,13 +21,15 @@ class MainContainer extends React.Component {
             return String(a).length === 1 ? '0' + a : a
         }
     
-        return myDate.hour + ':' + myDate.minute + ' ' + zero(myDate.day) + '.' + zero(myDate.month) + '.' + myDate.year;
+        return zero(myDate.hour) + ':' + zero(myDate.minute) + ' ' + zero(myDate.day) + '.' + zero(myDate.month) + '.' + myDate.year;
     }
     render() {
+
       return <Main questions={this.props.questions} 
                 getDate={this.getDate}
                 sortYoungerQuestions={this.props.sortYoungerQuestions}
                 sortOldQuestions={this.props.sortOldQuestions}
+                sortHotQuestions={this.props.sortHotQuestions}
                 />
     }
 }
@@ -38,4 +40,4 @@ let mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, {getAllQuestions, sortYoungerQuestions, sortOldQuestions})(MainContainer);
+export default connect(mapStateToProps, {getAllQuestions, sortYoungerQuestions, sortOldQuestions, sortHotQuestions})(MainContainer);

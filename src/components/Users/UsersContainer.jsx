@@ -22,7 +22,7 @@ class UsersContainer extends React.Component {
                 sortUsersByName={this.props.sortUsersByName}
                 sortUsersByReputation={this.props.sortUsersByReputation}
                 sortUsersByCreation={this.props.sortUsersByCreation}
-                currentPage={this.props.currentPage}
+                // currentPage={this.props.currentPage}
                 test={this.test}
                 />
             </>
@@ -35,7 +35,7 @@ let mapStateToProps = (state) => {
         users: state.usersPage.users.items,
         pageSize: state.usersPage.pageSize,
         totalUsersCount: state.usersPage.totalUsersCount,
-        currentPage: state.usersPage.currentPage,
+        // currentPage: state.usersPage.currentPage,
     }
 }
 

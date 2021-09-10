@@ -48,3 +48,6 @@
 .user_wrapper p{
     margin: 5px;
 }
+.pages{
+    cursor: pointer;
+}

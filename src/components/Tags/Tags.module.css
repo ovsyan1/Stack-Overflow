@@ -6,11 +6,12 @@
     height: 30px;
 }
 .sort_btn_wrapper{
-    display: grid;
+    display: flex;
     justify-content: end;
 }
 .sort_btn_wrapper div{
     cursor: pointer;
+    margin: 5px;
 }
 .txt{
     font-weight: 100;
@@ -37,4 +38,13 @@
 }
 .statistic_wrapper{
     display: flex;
+}
+.tags_page_wrapper{
+    cursor: pointer;
+}
+.name{
+    font-weight: bold;
+}
+.count{
+    font-size: small;
 }

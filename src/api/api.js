@@ -22,7 +22,7 @@ export const usersAPI = {
 }
 
 export const profileAPI = {
-    getProfile(userId){
+    getProfile(userId = 2){
         return axios.get(`${baseURL}/2.3/users/${userId}?site=stackoverflow`)
     }
 }
@@ -37,4 +37,25 @@ export const questionsAPI = {
     sortOldQuestions(){
         return axios.get(`${baseURL}/2.3/questions?order=asc&sort=creation&site=stackoverflow&filter=!6VvPDzQHaprdq`)
     },
+    sortHotQuestions(){
+        return axios.get(`${baseURL}/2.3/questions?order=desc&sort=hot&site=stackoverflow`);
+    }
+}
+
+export const questionAPI = {
+    getQuestionId(questionId){
+        return axios.get(`${baseURL}/2.3/questions/${questionId}?order=desc&sort=activity&site=stackoverflow`)
+    }
+}
+
+export const tagsAPI = {
+    getAllTags(){
+        return axios.get(`${baseURL}/2.3/tags?order=desc&sort=popular&site=stackoverflow&filter=!nKzQUR6(B-`);
+    },
+    sortByActivity(){
+        return axios.get(`${baseURL}/2.3/tags?order=desc&sort=activity&site=stackoverflow&filter=!nKzQUR6(B-`);
+    },
+    sortByName(){
+        return axios.get(`${baseURL}/2.3/tags?order=asc&sort=name&site=stackoverflow&filter=!nKzQUR6(B-`);
+    }
 }

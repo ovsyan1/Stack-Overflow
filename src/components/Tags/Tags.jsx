@@ -11,11 +11,18 @@ const Tags = (props) => {
             </p>
             <input type="text" placeholder="Filter by tag name" />
             <div className={classes.sort_btn_wrapper}>
-                <div>Popular</div>
-                <div>Name</div>
-                <div>New</div>
+                <div onclick={() => props.getAllTags()}>Popular</div>
+                <div onClick={() => props.sortByName()}>Name</div>
+                <div onclick={() => props.sortByActivity()}>Activity</div>
             </div>
             <div className={classes.tags_wrapper}>
+                {props.tags?.data?.items.map((tag, i) => {
+                   return <div key={i} className={classes.tags_page_wrapper}>
+                       <div className={classes.name}>{tag.name}</div>
+                       <div className={classes.count}>{tag.count}</div>
+                       <span className={classes.count}>questions</span>
+                       </div>
+                })}
             </div>
         </div>
     ) 

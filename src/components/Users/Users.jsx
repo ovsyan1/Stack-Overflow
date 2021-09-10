@@ -8,7 +8,6 @@ const Users = (props) => {
     for(let i = 1; i <= pagesCount;i++){
         pages.push(i);
     }
-    console.log(props)
     return (
         <div className={classes.users_wrapper}>
             <h3>Users</h3>
@@ -19,11 +18,11 @@ const Users = (props) => {
                 <div onclick={() => props.sortUsersByCreation()}>By creation date</div>
             </div>
             <div>
-                {pages.map(page => {
+                {pages.map((page, i) => {
                     return (
                         <span 
-                            className={props.currentPage === page ? classes.selectedPage : null} 
-                            key={page} 
+                            className={props.currentPage === page ? classes.selectedPage : classes.pages} 
+                            key={i} 
                             onClick={(e) => props.onPageChanged(page)}
                         >
                             {page}
@@ -37,11 +36,11 @@ const Users = (props) => {
                 <NavLink to={'/profile/' + u.account_id}>
                     <div className={classes.user_wrapper} key={i}>
                         <div>
-                            <img src={u.profile_image} alt={u.profile_image}/>
+                            <img src={u.profile_image} alt={u.profile_image} key={i + 1}/>
                         </div>
-                        <p>{u.display_name}</p>
-                        <p>Reputation:{u.reputation}</p>
-                        <p>{u.location}</p>
+                        <p key={i + 2}>{u.display_name}</p>
+                        <p key={i + 3}>Reputation:{u.reputation}</p>
+                        <p key={i + 4}>{u.location}</p>
                     </div>
                 </NavLink>
             ))
