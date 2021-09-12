@@ -6,7 +6,7 @@ import MainContainer from './components/Main/MainContainer';
 import Navbar from './components/Navbar/Navbar';
 import TagsContainer from './components/Tags/TagsContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
-import Questions from './components/Questions/Questions';
+import QuestionContainer from './components/Question/QuestionContainer';
 import Answer from './components/Answer/Answer';
 import UsersContainer from './components/Users/UsersContainer';
 
@@ -21,7 +21,7 @@ const App = () => {
         <Route path='/profile/:userId?' render={() => <ProfileContainer />}/>
         <Route path='/users' render={() => <UsersContainer />}/>
         <Route path='/tags' render={() => <TagsContainer />}/>
-        <Route path='/question/:questionId?' render={() => <Questions />}/>
+        <Route path='/question/:questionId?' render={() => <QuestionContainer />}/>
         <Route path='/answer' render={() => <Answer />}/>
       </div>
     </div>

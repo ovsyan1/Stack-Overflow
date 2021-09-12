@@ -43,8 +43,8 @@ export const questionsAPI = {
 }
 
 export const questionAPI = {
-    getQuestionId(questionId){
-        return axios.get(`${baseURL}/2.3/questions/${questionId}?order=desc&sort=activity&site=stackoverflow`)
+    getQuestionId(questionId = 6){
+        return axios.get(`${baseURL}/2.3/questions/${questionId}?&site=stackoverflow&filter=!6VvPDzRe9gpYa`)
     }
 }
 
