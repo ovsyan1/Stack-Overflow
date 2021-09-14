@@ -3,11 +3,11 @@ import { NavLink } from 'react-router-dom';
 import classes from './Users.module.css';
 
 const Users = (props) => {
-    let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize)
-    let pages = [];
-    for(let i = 1; i <= pagesCount;i++){
-        pages.push(i);
-    }
+    // let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize)
+    // let pages = [];
+    // for(let i = 1; i <= pagesCount;i++){
+    //     pages.push(i);
+    // }
     return (
         <div className={classes.users_wrapper}>
             <h3>Users</h3>
@@ -15,10 +15,10 @@ const Users = (props) => {
             <div className={classes.tag_wrapper}>
                 <div onClick={() => props.sortUsersByReputation()}>Reputation</div>
                 <div onClick={() => props.sortUsersByName()}>Sort users by name</div>
-                <div onclick={() => props.sortUsersByCreation()}>By creation date</div>
+                <div onClick={() => props.sortUsersByCreation()}>By creation date</div>
             </div>
             <div>
-                {pages.map((page, i) => {
+                {/* {pages.map((page, i) => {
                     return (
                         <span 
                             className={props.currentPage === page ? classes.selectedPage : classes.pages} 
@@ -28,7 +28,7 @@ const Users = (props) => {
                             {page}
                         </span>
                     )
-                })}
+                })} */}
             </div>
             <div className={classes.user_box}>
             {

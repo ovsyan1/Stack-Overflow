@@ -7,15 +7,15 @@
     align-items: center;
     justify-content: center;
 }
-.header img{
-    margin: 10px;
-    width: 80px;
+.logo{
+    width: 180px;
+    margin: 15px;
 }
 .header input{
     width: 700px;
     height: 20px;
 }
 .avatar{
-    width: 30px;
+    width: 80px;
     height: 35px;
 }

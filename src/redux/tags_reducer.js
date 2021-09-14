@@ -1,44 +1,51 @@
-import { tagsAPI } from '../api/api';
+import { tagAPI, tagsAPI } from '../api/api';
 
 const SET_TAGS = 'SET_TAGS';
-const SORT_ACTIVITY = 'SORT_ACTIVITY';
-const SORT_NAMES = 'SORT_NAMES';
+const SET_TAG = 'SET_TAG';
+const SET_TAG_INFO = 'SET_TAG_INFO';
 
 const initialState = {
     tags: [],
+    tagWiki: null,
+    tagInfo: null
 }
 
 const tagsReducer = (state = initialState, action) => {
     switch (action.type){
         case SET_TAGS:
             return {...state, tags: action.tags}
-        case SORT_ACTIVITY:
-            return {...state, tags: action.tags}
-        case SORT_NAMES:
-            return{...state, tags: action.tags}
+        case SET_TAG:
+            return {...state, tagWiki: action.tag}
+        case SET_TAG_INFO:
+            return {...state, tagInfo: action.tag}
         default: 
             return {...state}
     }
 }
 
 export const setTags = (tags) => ({type: SET_TAGS, tags});
-export const sortActivity = (tags) => ({type: SORT_ACTIVITY, tags});
-export const sortNames = (tags) => ({type: SORT_NAMES, tags});
+export const setTag = (tag) => ({type: SET_TAG, tag});
+export const setTagInfo = (tag) => ({type: SET_TAG_INFO, tag});
 
 export const getAllTags = () => async (dispatch) => {
-    console.log('all');
     let response = await tagsAPI.getAllTags();
     dispatch(setTags(response));
 }
 export const sortByActivity = () => async (dispatch) => {
-    console.log('activity');
     let response = await tagsAPI.sortByActivity();
-    dispatch(sortActivity(response));
+    dispatch(setTags(response));
 }
 export const sortByName = () => async (dispatch) => {
-    console.log('name');
     let response = await tagsAPI.sortByName();
-    dispatch(sortNames(response));
+    dispatch(setTags(response));
+}
+export const getTagWiki = (tag) => async (dispatch) => {
+    let response = await tagAPI.getTagWiki(tag);
+    dispatch(setTag(response));
+}
+export const getTagFAQ = (tag) => async (dispatch) => {
+    let response = await tagAPI.getTagFAQ(tag);
+    dispatch(setTagInfo(response));
 }
 
 export default tagsReducer;

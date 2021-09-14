@@ -7,9 +7,17 @@ import { getUserProfile } from '../../redux/profile_reducer';
 
 
 class  ProfileContainer extends React.Component {
-    componentDidMount(){
+    refreshProfile(){
         let userId = this.props.match.params.userId;
         this.props.getUserProfile(userId);
+    }
+    componentDidMount(){
+        this.refreshProfile();
+    }
+    componentDidUpdate(prevProps, prevState){
+        if(this.props.match.params.userId !== prevProps.match.params.userId){
+            this.refreshProfile();
+        }
     }
     render(){
         return (

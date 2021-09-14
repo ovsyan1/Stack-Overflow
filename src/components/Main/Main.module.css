@@ -8,29 +8,36 @@
 }
 .sort_wrapper div{
     padding: 8px;
-    border: 2.5px solid black;
+    border: 1px solid black;
     border-radius: 5px;
     margin: 5px;
     cursor: pointer;
 }
 .sort_wrapper div:hover{
-    background-color: antiquewhite;
+    background-color: rgb(58, 58, 58);
+    color: white;
 }
 .tag_wrapper{
     cursor: pointer;
-    color: red;
+    color: rgb(17, 141, 172);
     margin: 5px;
     border: 0.5px solid black;
     border-radius: 5px;
     padding: 5px;
 }
 .tag_wrapper:hover{
-    background-color:red;
-    color: burlywood;
+    background-color:rgb(58, 58, 58);
+    color: white;
 }
 .info_wrapper{
     margin-top: 15px;
 }
 .info_wrapper span{
     margin: 5px;
+}
+.green{
+    color: green;
+}
+.red{
+    color: red;
 }
