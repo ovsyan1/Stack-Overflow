@@ -1,0 +1,31 @@
+h1{
+    margin-left: 10px;
+}
+.wikis_wrapper{
+    width: 600px;
+    margin: 20px;
+}
+.tags_info_wrapper{
+    display: flex;
+}
+.tags_info_wrapper div{
+    cursor: pointer;
+    color: rgb(17, 141, 172);
+    margin: 5px;
+    border: 0.5px solid black;
+    border-radius: 5px;
+    padding: 5px;
+}
+.tags_info_wrapper div:hover{
+    background-color:rgb(58, 58, 58);
+    color: white;
+}
+.faq_questions_wrapper{
+    margin: 5px;
+}
+.green{
+    color: green;
+}
+.red{
+    color: red;
+}
