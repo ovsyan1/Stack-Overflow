@@ -1,17 +1,21 @@
 import React  from 'react';
 import Users from './Users';
 import {connect} from 'react-redux';
+import Preloader from '../common/Preloader';
 import {getUsers, sortUsersByName, sortUsersByReputation, sortUsersByCreation} from '../../redux/users_reducer';
 
 
 class UsersContainer extends React.Component {
     componentDidMount(){
-        this.props.getUsers();
+        this.props.getUsers(this.props.currentPage, this.props.pageSize);
     }
     onPageChanged = (pageNumber) => {
         this.props.getUsers(pageNumber, this.props.pageSize);
     }    
     render(){
+        if(!this.props.users){
+            return <Preloader />
+        }
         return (
             <>
             <Users
@@ -22,7 +26,7 @@ class UsersContainer extends React.Component {
                 sortUsersByName={this.props.sortUsersByName}
                 sortUsersByReputation={this.props.sortUsersByReputation}
                 sortUsersByCreation={this.props.sortUsersByCreation}
-                // currentPage={this.props.currentPage}
+                currentPage={this.props.currentPage}
                 test={this.test}
                 />
             </>
@@ -35,7 +39,7 @@ let mapStateToProps = (state) => {
         users: state.usersPage.users.items,
         pageSize: state.usersPage.pageSize,
         totalUsersCount: state.usersPage.totalUsersCount,
-        // currentPage: state.usersPage.currentPage,
+        currentPage: state.usersPage.currentPage
     }
 }
 

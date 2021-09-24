@@ -1,4 +1,4 @@
-import { tagAPI, tagsAPI } from '../api/api';
+import { tagAPI, tagsAPI } from '../api/tags_api';
 
 const SET_TAGS = 'SET_TAGS';
 const SET_TAG = 'SET_TAG';

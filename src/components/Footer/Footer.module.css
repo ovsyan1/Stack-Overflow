@@ -1,0 +1,24 @@
+.wrapper{
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #242729;
+    /* position: absolute;
+    bottom: 0;
+    left: 0; */
+}
+.wrapper div{
+    margin: 5px;
+    padding: 15px;
+}
+.logo{
+    width: 120px;
+    margin: 15px;
+}
+.links_wrapper p {
+    color: rgb(173, 173, 173) !important;
+}
+.links_wrapper p:hover{
+    color: rgb(221, 221, 221) !important;
+}

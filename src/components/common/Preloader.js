@@ -1,8 +1,13 @@
 import React from 'react';
-
+import rocket from '../../assets/images/Rocket.gif';
+import classes from './Preloader.module.css';
 
 const Preloader = () => {
-    return <img src={'https://i.gifer.com/7VE.gif'}></img>
+    return (
+        <div>
+            <img src={rocket} alt='preloader' className={classes.preloader}/>
+        </div>
+    )
 }
 
 export default Preloader;

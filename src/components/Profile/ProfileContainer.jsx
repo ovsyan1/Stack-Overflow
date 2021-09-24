@@ -4,6 +4,7 @@ import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { getUserProfile } from '../../redux/profile_reducer';
+import Preloader from '../common/Preloader';
 
 
 class  ProfileContainer extends React.Component {
@@ -20,6 +21,9 @@ class  ProfileContainer extends React.Component {
         }
     }
     render(){
+        if(!this.props.profile){
+            return <Preloader />
+        }
         return (
             <>
             <Profile {...this.props} profile={this.props.profile}/>

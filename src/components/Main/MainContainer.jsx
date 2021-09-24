@@ -2,6 +2,7 @@ import React from 'react';
 import Main from './Main';
 import {connect} from 'react-redux';
 import { getAllQuestions, sortYoungerQuestions, sortOldQuestions, sortHotQuestions } from '../../redux/questions_reducer';
+import Preloader from '../common/Preloader';
 
 class MainContainer extends React.Component {
     componentDidMount() {
@@ -24,7 +25,9 @@ class MainContainer extends React.Component {
         return zero(myDate.hour) + ':' + zero(myDate.minute) + ' ' + zero(myDate.day) + '.' + zero(myDate.month) + '.' + myDate.year;
     }
     render() {
-
+        if(this.props.questions.length < 1){
+            return <Preloader />
+        }
       return <Main questions={this.props.questions} 
                 getDate={this.getDate}
                 sortYoungerQuestions={this.props.sortYoungerQuestions}

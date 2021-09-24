@@ -22,13 +22,32 @@ class QuestionContainer extends React.Component {
             this.refreshQuestion();
         }
     }
+
+    getDate(date){
+        let seconds = new Date(date * 1000);
+        let myDate = {
+            hour: seconds.getHours(),
+            minute: seconds.getMinutes(),
+            day: seconds.getDate(),
+            month: seconds.getMonth() + 1,
+            year: seconds.getFullYear()
+        }
+    
+        function zero(a){ 
+            return String(a).length === 1 ? '0' + a : a
+        }
+    
+        return zero(myDate.hour) + ':' + zero(myDate.minute) + ' ' + zero(myDate.day) + '.' + zero(myDate.month) + '.' + myDate.year;
+    }
+    re
     render() {
         if(!this.props.question){
             return <Preloader />
         }
         return(
             <>
-            <Question question={this.props.question} answers={this.props.answers}/>
+            <Question question={this.props.question} answers={this.props.answers}
+                getDate={this.getDate}/>
             </>
         )
     }

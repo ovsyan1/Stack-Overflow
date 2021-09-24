@@ -2,9 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import classes from './Main.module.css';
 
-const Main = (props) => {
-       
-    
+const Main = (props) => {    
         return (
         <div className={classes.main_wrapper}>
             <h2>Top Questions</h2>
@@ -15,15 +13,15 @@ const Main = (props) => {
             </div>
             <hr></hr>
         <div>
-            {props?.questions?.data?.items?.map((item, i) => {
+            {props?.questions?.data?.items?.map(item => {
                 return (
-                <div>
-                    <NavLink to={'/question/' + item.question_id}>
-                    <h3 key={i + 2}>{item.title}</h3>
+                <div key={item.question_id}>
+                    <NavLink style={{textDecoration: 'none', color: 'black'}} to={'/question/' + item.question_id}>
+                    <h3>{item.title}</h3>
                     </NavLink>
                     {item.tags.map((tag, i) => {
                         return (
-                            <span className={classes.tag_wrapper} key={i}>{tag}</span>
+                            <span className={classes.tag_wrapper} key={i + tag}>{tag}</span>
                         )
                     })}
                     <div className={classes.info_wrapper}>

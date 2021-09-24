@@ -1,4 +1,4 @@
-import { questionAPI } from "../api/api";
+import { questionAPI } from "../api/questions_api";
 
 const SET_QUESTION = 'SET_QUESTION';
 

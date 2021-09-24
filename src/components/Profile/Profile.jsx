@@ -1,12 +1,8 @@
 import React from 'react';
-// import ProfileInfo from './ProfileInfo/ProfileInfo';
-import Preloader from '../common/Preloader';
+
 import classes from './Profile.module.css';
 
 const Profile = (props) => {
-    if(!props.profile){
-        return <Preloader />
-    }
        return(
         <div className={classes.profile_wrapper}>
             <img src={props.profile?.data?.items[0]?.profile_image || 'https://i.pinimg.com/564x/ff/c2/37/ffc2379c099c0b25bb7e6afaba5748fb.jpg'} alt="profile photo" />

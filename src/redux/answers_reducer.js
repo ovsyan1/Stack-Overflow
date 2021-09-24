@@ -1,4 +1,4 @@
-import { answerAPI } from "../api/api";
+import { answerAPI } from "../api/answer_api";
 
 const SET_ANSWERS = 'SET_ANSWERS';
 

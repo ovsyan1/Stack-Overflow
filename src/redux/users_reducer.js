@@ -1,11 +1,12 @@
-import {usersAPI} from '../api/api';
+import {usersAPI} from '../api/users_api';
+
 const SET_USERS = 'SET_USERS';
 const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
 const SET_USERS_TOTAL_COUNT = 'SET_USERS_TOTAL_COUNT';
 
 let initialState = {
     users: [],
-    pageSize: 5,
+    pageSize: 30,
     totalUsersCount: 0,
     currentPage: 1,
     sortParams: ''

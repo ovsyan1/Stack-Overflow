@@ -7,10 +7,16 @@
     border-left: none;
     border-bottom: none;
 }
+.item{
+    margin: 10px;
+}
 .item a{
     color: black;
     cursor: pointer;
     text-decoration: none;
+}
+.item a:hover{
+    color: rgb(99, 96, 96);
 }
 .item a.active{
     color: gold;
